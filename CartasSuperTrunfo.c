@@ -11,9 +11,12 @@ char estado[20] = "";
 char codigo[20] = "";
 char cidade[50] = "";
 double populacao = 0;
-double area = 0;  // quilometros quadradoas
+ double area = 0;  // quilometros quadradoas
 double pib = 0;  // bilhoes de reais
 int pontos_turisticos = 0 ;
+float dencidade_populacional= populacao/area;//variaves para calcular a densidade populacional
+float pib_per_capita = pib/populacao;//variaveis para calcular o pib per capita
+
 
 // variaves carta 2
 
@@ -26,6 +29,8 @@ double populacao2 = 0;
 double area2 = 0;   //quilometros quadrados
 double pib2 = 0;  //bilhoes de reais
 int pontos_turisticos2 = 0;
+float dencidade_populacional2= populacao2/area2;//variaveis para calcular a densidade populacional
+float pib_per_capita2 = pib2/populacao2;//variaveis para calcular o pib per capita
 
 // leitura das variaves carta 1
 
@@ -106,10 +111,16 @@ printf("Pais: %s\n", pais);
 printf("Estado: %s\n", estado);
 printf("Codigo: %s\n", codigo);
 printf("Cidade: %s\n", cidade);
-printf("Populacao: %f\n", populacao);
-printf("Area: %.2f Km\n", area);
+printf("Populacao: %.2f\n", populacao);
+printf("Area: %.2f Km²\n", area);
 printf("Pib: %.2f Bilhoes de reais\n", pib);
 printf("Pontos_turisticos: %d\n", pontos_turisticos);
+
+dencidade_populacional= populacao/area;//variaveis para calcular a densidade populacional
+printf("Densidade populacional: %.2f hab/km²\n", dencidade_populacional);
+
+pib_per_capita= pib/populacao;//variaveis para calcular o pib per capita
+printf("Pib per capita: %.2freais\n", pib_per_capita);
 
 
 printf("\n");//adicionar uma linha em branco para separar as cartas
@@ -121,10 +132,17 @@ printf("Pais: %s\n", pais2);
 printf("Estado:%s\n", estado2);
 printf("Codigo: %s\n", codigo2);
 printf("Cidade: %s\n", cidade2);
-printf("Populacao: %f\n", populacao2);
-printf("Area: %.2f Km\n", area2);
+printf("Populacao: %.2f\n", populacao2);
+printf("Area: %.2f Km²\n", area2);
 printf("Pib: %.2f Bilhoes de reais\n", pib2);
 printf("Pontos_turisticos: %d\n", pontos_turisticos2);
+
+
+dencidade_populacional2= populacao2/area2;//variaveis para calcular a densidade populacional
+printf("Densidade populacional: %.2f hab/km²\n", dencidade_populacional2);
+
+pib_per_capita2= pib2/populacao2;//variaveis para calcular o pib per capita
+printf("Pib per capita: %.2freais\n", pib_per_capita2);
 
 
 
