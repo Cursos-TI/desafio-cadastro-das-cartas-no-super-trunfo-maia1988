@@ -16,6 +16,9 @@ double pib = 0;  // bilhoes de reais
 int pontos_turisticos = 0 ;
 float dencidade_populacional= populacao/area;//variaves para calcular a densidade populacional
 float pib_per_capita = pib/populacao;//variaveis para calcular o pib per capita
+float superpoder=area/populacao+populacao+area+pib+pontos_turisticos+pib_per_capita;
+int vencedor;
+
 
 
 // variaves carta 2
@@ -31,6 +34,7 @@ double pib2 = 0;  //bilhoes de reais
 int pontos_turisticos2 = 0;
 float dencidade_populacional2= populacao2/area2;//variaveis para calcular a densidade populacional
 float pib_per_capita2 = pib2/populacao2;//variaveis para calcular o pib per capita
+float superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
 
 // leitura das variaves carta 1
 
@@ -123,6 +127,10 @@ pib_per_capita= pib/populacao;//variaveis para calcular o pib per capita
 printf("Pib per capita: %.2freais\n", pib_per_capita);
 
 
+superpoder=area/populacao+populacao+area+pib+pontos_turisticos+pib_per_capita;
+printf("Superpoder: %.2f\n", superpoder);
+
+
 printf("\n");//adicionar uma linha em branco para separar as cartas
 
 //inprecao das vriaves carta 2
@@ -143,6 +151,34 @@ printf("Densidade populacional: %.2f hab/km²\n", dencidade_populacional2);
 
 pib_per_capita2= pib2/populacao2;//variaveis para calcular o pib per capita
 printf("Pib per capita: %.2freais\n", pib_per_capita2);
+
+superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
+printf("Superpoder: %.2f\n", superpoder2);
+
+printf("\n");//adicionar uma linha em branco para separar as cartas
+
+printf("[resultado = 1] carta 1 ganha :[resultado = 0] carta2 ganha\n");
+
+populacao>populacao2;
+printf("populacao: carta1 [%d] carta2 \n",populacao>populacao2);
+
+area>area2;
+printf("area: carta1 [%d] carta2 \n",area>area2);
+
+pib>pib2;
+printf("pib: carta1 [%d] carta2 \n",pib>pib2);
+
+pontos_turisticos>pontos_turisticos2;
+printf("pontos_turisticos: carta1 [%d] carta2 \n",pontos_turisticos>pontos_turisticos2);
+
+dencidade_populacional>dencidade_populacional2;
+printf("dencidade_populacional: carta1 [%d] carta2 \n",dencidade_populacional>dencidade_populacional2);
+
+pib_per_capita>pib_per_capita2;
+printf("pib_per_capita: carta1 [%d] carta2 \n",pib_per_capita>pib_per_capita2);
+
+superpoder>superpoder2;
+printf("superpoder: carta1 [%d] carta2 \n",superpoder>superpoder2);
 
 
 
