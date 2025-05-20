@@ -35,10 +35,12 @@ int pontos_turisticos2 = 0;
 float dencidade_populacional2= populacao2/area2;//variaveis para calcular a densidade populacional
 float pib_per_capita2 = pib2/populacao2;//variaveis para calcular o pib per capita
 float superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
+int vencedor2;
+
 
 // leitura das variaves carta 1
 
-printf ("--cadastro da carta 1--\n");
+printf ("--cadastro da carta --\n");
 
 printf ("Digite o numero da carta: ");
 scanf(" %d", &carta);
@@ -155,30 +157,105 @@ printf("Pib per capita: %.2freais\n", pib_per_capita2);
 superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
 printf("Superpoder: %.2f\n", superpoder2);
 
+
+
+
 printf("\n");//adicionar uma linha em branco para separar as cartas
 
-printf("[resultado = 1] carta 1 ganha :[resultado = 0] carta2 ganha\n");
+printf("[resultado CARTA ganhadora\n");
 
-populacao>populacao2;
-printf("populacao: carta1 [%d] carta2 \n",populacao>populacao2);
+printf("\n");//adicionar uma linha em branco 
 
-area>area2;
-printf("area: carta1 [%d] carta2 \n",area>area2);
+printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
+printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
 
-pib>pib2;
-printf("pib: carta1 [%d] carta2 \n",pib>pib2);
+if(populacao>populacao2){
+    printf("populacao carta1 venceu:\n");
+}else{
+    printf("populacao carta2 venceu:\n");
+}
 
-pontos_turisticos>pontos_turisticos2;
-printf("pontos_turisticos: carta1 [%d] carta2 \n",pontos_turisticos>pontos_turisticos2);
 
-dencidade_populacional>dencidade_populacional2;
-printf("dencidade_populacional: carta1 [%d] carta2 \n",dencidade_populacional>dencidade_populacional2);
+printf("\n");
 
-pib_per_capita>pib_per_capita2;
-printf("pib_per_capita: carta1 [%d] carta2 \n",pib_per_capita>pib_per_capita2);
 
-superpoder>superpoder2;
-printf("superpoder: carta1 [%d] carta2 \n",superpoder>superpoder2);
+
+printf("carta1:pais :%s,area%.2f\n",pais,area);
+printf("carta2:pais2 :%s,area2%.2f\n",pais2,area2);
+
+if(area>area2){
+      printf("area carta1 venceu:\n");
+}else{
+     printf("area2 carta2 venceu:\n");
+}
+
+printf("\n");
+
+
+printf("carta1:pais :%s,pib%.2f\n",pais,pib);
+printf("carta2:pais2 :%s,pib2%.2f\n",pais2,pib2);
+
+if(pib > pib2){
+    printf("pib carta1 venceu:\n");
+}else{
+    printf("pib2 carta2 venceu:\n");
+}
+
+printf("\n");
+
+
+printf("carta1:pais :%s,pontos_turisticos%d\n",pais,pontos_turisticos);
+printf("carta2:pais2 :%s,pontos_turisticos%d\n",pais2,pontos_turisticos2);
+
+if(pontos_turisticos > pontos_turisticos2){
+    printf("pontos_turisticos carta1 venceu:\n");
+}else{
+    printf("pontos_turisticos2 carta2 venceu:\n");
+}
+printf("\n");
+
+
+printf("carta1:pais :%s,dencidade_populacional%.2f\n",pais,dencidade_populacional);
+printf("carta2:pais :%s,dencidade_populacional2%.2f\n",pais2,dencidade_populacional2);
+
+if(dencidade_populacional < dencidade_populacional2){
+    printf("dencidade_populacional carta venceu:\n");
+}else{
+    printf("dencidade_populacional2 carta2 venceu:\n");
+}
+printf("\n");
+
+
+printf("carta1:pais :%s,pib_per_capita%.2f\n",pais,pib_per_capita);
+printf("carta2:pais2 :%s,pib_per_capita2%.2f\n",pais2,pib_per_capita2);
+
+if(pib_per_capita > pib_per_capita2){
+    printf("pib_per_capita carta1 venceu:\n");
+}else{
+    printf("pib_per_capita2 carta2 venceu:\n");
+}
+
+printf("\n");
+
+printf("carta1:pais :%s,superpoder:%.2f\n",pais,superpoder);
+printf("carta2:pais2 :%s,superpoder2:%.2f\n",pais2,superpoder2);
+
+if(superpoder>superpoder2){
+     printf("superpoder carta1 venceu :\n");
+}else{
+    printf("superpoder2 carta2 venceu:\n");
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
