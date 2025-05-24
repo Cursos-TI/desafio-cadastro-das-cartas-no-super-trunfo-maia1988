@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include<sched.h>
 
 int main (){
@@ -14,11 +15,11 @@ double populacao = 0;
  double area = 0;  // quilometros quadradoas
 double pib = 0;  // bilhoes de reais
 int pontos_turisticos = 0 ;
-float dencidade_populacional= populacao/area;//variaves para calcular a densidade populacional
-float pib_per_capita = pib/populacao;//variaveis para calcular o pib per capita
-float superpoder=area/populacao+populacao+area+pib+pontos_turisticos+pib_per_capita;
+float dencidade_populacional;//= populacao/area;//variaves para calcular a densidade populacional
+float pib_per_capita; // pib/populacao;//variaveis para calcular o pib per capita
+float superpoder;//=area/populacao+populacao+area+pib+pontos_turisticos+pib_per_capita;
 int vencedor;
-int opçao;
+int escolha;
 
 
 // variaves carta 2
@@ -32,11 +33,11 @@ double populacao2 = 0;
 double area2 = 0;   //quilometros quadrados
 double pib2 = 0;  //bilhoes de reais
 int pontos_turisticos2 = 0;
-float dencidade_populacional2= populacao2/area2;//variaveis para calcular a densidade populacional
-float pib_per_capita2 = pib2/populacao2;//variaveis para calcular o pib per capita
-float superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
+float dencidade_populacional2;//= populacao2/area2;//variaveis para calcular a densidade populacional
+float pib_per_capita2;// = pib2/populacao2;//variaveis para calcular o pib per capita
+float superpoder2;//=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
 int vencedor2;
-int opçao2;
+//int opçao;
 
 // leitura das variaves carta 1
 
@@ -160,6 +161,7 @@ printf("Superpoder: %.2f\n", superpoder2);
 
 
 
+
 printf("\n");//adicionar uma linha em branco para separar as cartas
 
 printf("[****** resultado CARTA ganhadora ******\n");
@@ -167,12 +169,12 @@ printf("[****** resultado CARTA ganhadora ******\n");
 printf("\n");//adicionar uma linha em branco 
 
 printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
-printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
+printf("carta2: pais2:%s: populacao2:%.2f\n",pais2,populacao2);
 
 if(populacao > populacao2){
-    printf("populacao carta1 venceu:\n");
+    printf("%s:populacao carta1: venceu:\n",pais);
 }else if(populacao < populacao2 ){
-    printf("populacao carta2 venceu:\n");
+    printf("%s:populacao2 carta2 venceu:\n",pais2);
 }else{
     printf(" empate:\n");
 }
@@ -182,59 +184,70 @@ printf("\n");
 
 
 
-printf("carta1:pais :%s,area%.2f\n",pais,area);
-printf("carta2:pais2 :%s,area2%.2f\n",pais2,area2);
+printf("carta1:pais :%s: area: %.2f Km²\n",pais,area);
+printf("carta2:pais2 :%s: area2: %.2f Km²\n",pais2,area2);
 
 if(area>area2){
-      printf("area carta1 venceu:\n");
+      printf("%s:area carta1 venceu:\n",pais);
+}else if(area < area2){
+     printf("%s:area2 carta2 venceu:\n",pais2);
 }else{
-     printf("area2 carta2 venceu:\n");
+  printf("empate:\n") ; 
 }
 
 printf("\n");
 
 
-printf("carta1:pais :%s,pib%.2f\n",pais,pib);
-printf("carta2:pais2 :%s,pib2%.2f\n",pais2,pib2);
+printf("carta1:pais  :%s:pib: %.2f bilhoes de reais\n",pais,pib);
+printf("carta2:pais2 :%s:pib2: %.2f bilhoes de reais\n",pais2,pib2);
 
 if(pib > pib2){
-    printf("pib carta1 venceu:\n");
+    printf("%s:pib carta1 venceu:\n",pais);
+}else if(pib < pib2) {
+    printf("%s:pib2 carta2 venceu:\n",pais2);
 }else{
-    printf("pib2 carta2 venceu:\n");
+    printf(" empate:\n");
+
 }
 
 printf("\n");
 
 
-printf("carta1:pais :%s,pontos_turisticos%d\n",pais,pontos_turisticos);
-printf("carta2:pais2 :%s,pontos_turisticos%d\n",pais2,pontos_turisticos2);
+printf("carta1:pais :%s,pontos_turisticos: %d\n",pais,pontos_turisticos);
+printf("carta2:pais2 :%s,pontos_turisticos: %d\n",pais2,pontos_turisticos2);
 
 if(pontos_turisticos > pontos_turisticos2){
-    printf("pontos_turisticos carta1 venceu:\n");
+    printf("%s:pontos_turisticos carta1 venceu:\n",pais);
+}else if(pontos_turisticos < pontos_turisticos2) {
+    printf("%s:pontos_turisticos2 carta2 venceu:\n",pais2);
 }else{
-    printf("pontos_turisticos2 carta2 venceu:\n");
+    printf("empate:\n");
 }
 printf("\n");
 
 
-printf("carta1:pais :%s,dencidade_populacional%.2f\n",pais,dencidade_populacional);
-printf("carta2:pais :%s,dencidade_populacional2%.2f\n",pais2,dencidade_populacional2);
+printf("carta1:pais :%s,dencidade_populacional: %.2f hab/ Km²\n",pais, dencidade_populacional);
+printf("carta2:pais :%s,dencidade_populacional2: %.2f hab/ Km²\n",pais2, dencidade_populacional2);
 
-if(dencidade_populacional < dencidade_populacional2){
-    printf("dencidade_populacional carta venceu:\n");
+if(dencidade_populacional > dencidade_populacional2){
+    printf("%s:dencidade_populacional carta venceu:\n",pais);
+}else if(dencidade_populacional < dencidade_populacional2) {
+    printf("%s:dencidade_populacional2 carta2 venceu:\n",pais2);
 }else{
-    printf("dencidade_populacional2 carta2 venceu:\n");
+    printf("empate:\n");
 }
 printf("\n");
 
 
-printf("carta1:pais :%s,pib_per_capita%.2f\n",pais,pib_per_capita);
-printf("carta2:pais2 :%s,pib_per_capita2%.2f\n",pais2,pib_per_capita2);
+printf("carta1:pais :%s,pib_per_capita: %.2f reais\n",pais,pib_per_capita);
+printf("carta2:pais2 :%s,pib_per_capita2: %.2f reais\n",pais2,pib_per_capita2);
 
 if(pib_per_capita > pib_per_capita2){
-    printf("pib_per_capita carta1 venceu:\n");
+    printf("%s:pib_per_capita carta1 venceu:\n",pais);
+}else if(pib_per_capita < pib_per_capita2) {
+    printf("%s:pib_per_capita2 carta2 venceu:\n",pais2);
 }else{
-    printf("pib_per_capita2 carta2 venceu:\n");
+    printf("empate:\n");
 }
 
 printf("\n");
@@ -243,103 +256,110 @@ printf("carta1:pais :%s,superpoder:%.2f\n",pais,superpoder);
 printf("carta2:pais2 :%s,superpoder2:%.2f\n",pais2,superpoder2);
 
 if(superpoder>superpoder2){
-     printf("superpoder carta1 venceu :\n");
-}else{
-    printf("superpoder2 carta2 venceu:\n");
+     printf("%s:superpoder carta1 venceu :\n",pais);
+}else if(superpoder < superpoder2) {
+    printf("%s:superpoder2 carta2 venceu:\n",pais2);
 
+}else{
+    printf("empate:\n");
 }
 
 printf("\n");
 printf("[## bem vindo ##]:\n");
-printf("[## escolha dois atributos para comparar ## ]:\n");
+printf("[## escolha um atributos para comparar ## ]:\n");
 printf("[**************************************************]\n");
 printf("pais: %s\n",pais);
-printf("[ 1 ] :populaçao\n");
-printf("[ 2 ] :area:\n");
-printf("[ 3 ] :pib:\n");
-printf(" escolha o  atribulto:\n");
-scanf("%d",&opçao);
+printf("pais2: %s\n",pais2);
+printf("[ 1 ] :[populaçao]\n");
+printf("[ 2 ] :[area     ]\n");
+printf("[ 3 ] :[pib      ]\n");
+printf(" escolha os atributos que voçe deseja conparar:\n");
+scanf("%d",&escolha);
 
 
-switch (opçao)
-{
-    case 1: // População
+//printf("pais: %s\n",pais);
+//printf("pais2: %s\n",pais2);
+
+switch(escolha){
+
+    case 1:
         if(populacao > populacao2){
+             printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
+            printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
+            
             printf("Resultado: população: %s venceu!\n", pais);
         }else if (populacao < populacao2){
+             printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
+            printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
+            
             printf("Resultado: população2: %s venceu!\n", pais2);  
         }else{
+            printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
+            printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
+            
             printf("**empate**\n");
         }
         break;
-    case 2: // Área
+    case 2:
         if(area > area2){
+            printf("carta1:pais :%s,area:%.2f Km²\n",pais,area);
+            printf("carta2:pais2 :%s,area2:%.2f Km²\n",pais2,area2);
+
             printf("Resultado área: %s venceu!\n", pais);
         }else if(area < area2){
+            printf("carta1:pais :%s,area:%.2f Km²\n",pais,area);
+            printf("carta2:pais2 :%s,area2:%.2f Km²\n",pais2,area2);
+
             printf("Resultado área2: %s venceu!\n", pais2);
         }else{
+            printf("carta1:pais :%s,area:%.2f Km²\n",pais,area);
+            printf("carta2:pais2 :%s,area2:%.2f Km²\n",pais2,area2);
+
             printf("empate\n");
         }
         break;
-    case 3: // PIB
+    case 3:
         if(pib > pib2){
+            printf("carta1:pais :%s,pib:%.2f bilhoes de reais\n",pais,pib);
+            printf("carta2:pais2 :%s,pib2:%.2f bilhoes de reais\n",pais2,pib2);
+
             printf("Resultado PIB: %s venceu!\n", pais);
-        }else if(pib < pib2){ 
+        }else if(pib < pib2){
+            printf("carta1:pais :%s,pib:%.2f bilhoes de reais\n",pais,pib);
+            printf("carta2:pais2 :%s,pib2:%.2f bilhoes de reais\n",pais2,pib2);
+ 
             printf("Resultado PIB2: %s venceu!\n", pais2);
         }else{
+            printf("carta1:pais :%s,pib:%.2f bilhoes de reais\n",pais,pib);
+            printf("carta2:pais2 :%s,pib2:%.2f bilhoes de reais\n",pais2,pib2);
+
             printf("empate\n");
         }
         break;
     default:
         printf("Opção inválida!\n");
         break;
-}
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//printf("pais: %s\n",pais);
-//printf("pais2: %s\n",pais2);
-// (opçao)
-{
 //case 1:
-   // printf("opçao:populaçao,populaçao2:\n");
-
+    //printf("opçao:populaçao:\n");
     //break;
 //case 2:
-    //printf("opçao;area,area2:\n");
+    //printf("opçao;area:\n");
     //break;
- //case 3:
-// printf("opçao:pib,pib2:\n");   
+//case 3:
+    //printf("opçao:pib:\n");   
+    //break;
 //default:
-   // break;
+    //break;
 //}
 
 //if(populacao > populacao2){
- //printf("Resultado:populacao: %s venceu!\n", pais);
+// printf("Resultado:populacao: %s venceu!\n", pais);
 //}else if (populacao < populacao2){
-  // printf("Resultado:populaçao2: %s venceu!\n", pais2);  
+   //printf("Resultado:populaçao2: %s venceu!\n", pais2);  
 //}else{
     //printf("**empate**:\n");
 //}
@@ -348,18 +368,19 @@ switch (opçao)
 //if(area > area2){
 //printf("resultado area:%s venceu:\n",pais);
 //}else if(area < area2){
-    //printf("resultado area2:%s venceu:\n",pais2);
+   // printf("resultado area2:%s venceu:\n",pais2);
 //}else{
-   // printf("empate:\n");
+    //printf("empate:\n");
 //}
 
 
 //if(pib > pib2){
    //printf("resultado pib:%s venceu:\n",pais);
 //}else if(pib < pib2){ 
-   // printf("resultado pib2:%s venceu:\n",pais2);
+    //printf("resultado pib2:%s venceu:\n",pais2);
 //}else{
-   // printf("empate:\n");
+     
+    //printf("empate:\n");
 //}
 
 
