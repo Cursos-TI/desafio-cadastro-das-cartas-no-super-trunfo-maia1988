@@ -18,7 +18,7 @@ float dencidade_populacional= populacao/area;//variaves para calcular a densidad
 float pib_per_capita = pib/populacao;//variaveis para calcular o pib per capita
 float superpoder=area/populacao+populacao+area+pib+pontos_turisticos+pib_per_capita;
 int vencedor;
-
+int opçao;
 
 
 // variaves carta 2
@@ -36,11 +36,11 @@ float dencidade_populacional2= populacao2/area2;//variaveis para calcular a dens
 float pib_per_capita2 = pib2/populacao2;//variaveis para calcular o pib per capita
 float superpoder2=area2/populacao2+populacao2+area2+pib2+pontos_turisticos2+pib_per_capita2;
 int vencedor2;
-
+int opçao2;
 
 // leitura das variaves carta 1
 
-printf ("--cadastro da carta --\n");
+printf ("--cadastro da carta1 --\n");
 
 printf ("Digite o numero da carta: ");
 scanf(" %d", &carta);
@@ -162,17 +162,19 @@ printf("Superpoder: %.2f\n", superpoder2);
 
 printf("\n");//adicionar uma linha em branco para separar as cartas
 
-printf("[resultado CARTA ganhadora\n");
+printf("[****** resultado CARTA ganhadora ******\n");
 
 printf("\n");//adicionar uma linha em branco 
 
 printf("carta1: pais :%s:populacao:%.2f\n",pais,populacao);
 printf("carta2: pais2:%s populacao2:%.2f\n",pais2,populacao2);
 
-if(populacao>populacao2){
+if(populacao > populacao2){
     printf("populacao carta1 venceu:\n");
-}else{
+}else if(populacao < populacao2 ){
     printf("populacao carta2 venceu:\n");
+}else{
+    printf(" empate:\n");
 }
 
 
@@ -247,10 +249,42 @@ if(superpoder>superpoder2){
 
 }
 
+printf("\n");
+printf("[## bem vindo ##]:\n");
+printf("[## escolha dois atributos para comparar ## ]:\n");
+printf("[**************************************************]\n");
+printf("pais: %s\n",pais);
+printf("[ 1 ] :populaçao,populaçao2;\n");
+printf("[ 2 ] :area,area2:\n");
+printf("[ 3 ] :pib,pib2 :\n");
+printf(" escolha o primeiro atribulto:\n");
+scanf("%d", opçao);
 
 
+printf("pais: %s\n",pais);
+printf("pais2: %s\n",pais2);
+switch (opçao)
+{
+case 1:
+    printf("opçao:populaçao,populaçao2:\n");
 
+    break;
+case 2:
+    printf("opçao;area,area2:\n");
+    break;
+ case 3:
+ printf("opçao:pib,pib2:\n");   
+default:
+    break;
+}
 
+if(populacao > populacao2){
+ printf("Resultado: %s venceu!\n", pais);
+}else if (populacao < pontos_turisticos2){
+   printf("Resultado: %s venceu!\n", pais2);  
+}else{
+    printf("**empate**:\n");
+}
 
 
 
@@ -260,7 +294,6 @@ if(superpoder>superpoder2){
 
 
 return 0;
-
 
 }
  
